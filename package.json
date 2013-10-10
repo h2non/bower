@@ -1,7 +1,8 @@
 {
-  "name": "bower",
+  "name": "bowerp",
+  "private": true,
   "version": "1.2.7",
-  "description": "The browser package manager.",
+  "description": "The browser package manager (with dependencies authentication support)",
   "author": "Twitter",
   "licenses": [
     {
@@ -23,7 +24,7 @@
     "archy": "0.0.2",
     "bower-config": "~0.5.0",
     "bower-endpoint-parser": "~0.2.0",
-    "bower-json": "~0.4.0",
+    "bower-json-auth": "~0.1.0",
     "bower-logger": "~0.2.1",
     "bower-registry-client": "~0.1.4",
     "cardinal": "~0.4.0",
@@ -73,7 +74,7 @@
     "test": "grunt test"
   },
   "bin": {
-    "bower": "bin/bower"
+    "bowerp": "bin/bowerp"
   },
   "preferGlobal": true
 }
