@@ -74,7 +74,7 @@
     "test": "grunt test"
   },
   "bin": {
-    "bower-auth": "bin/bower-auth"
+    "bower-auth": "bin/bower"
   },
   "preferGlobal": true
 }
