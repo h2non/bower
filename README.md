@@ -1,4 +1,12 @@
-# BOWER [![Build Status](https://secure.travis-ci.org/bower/bower.png?branch=master)](http://travis-ci.org/bower/bower)
+# BOWER `for private organizations` [![Build Status](https://secure.travis-ci.org/h2non/bower-auth.png?branch=master)](http://travis-ci.org/h2non/bower-auth)
+
+Adapted version of Bower package manager in order to provide support for private hosted + authenticated Web components dependencies.
+
+It implements a initial version of the [authrc](http://github.com/adesisnetlife/authrc) specification.
+
+`Note that this is an experimental implementation, use it under your own risk`
+
+## About
 
 Bower is a package manager for the web. It offers a generic, unopinionated
 solution to the problem of **front-end package management**, while exposing the
@@ -19,7 +27,7 @@ Bower depends on [Node](http://nodejs.org/) and [npm](http://npmjs.org/). It's
 installed globally using npm:
 
 ```
-npm install -g bower
+npm install -g bower-auth
 ```
 
 Also make sure that [git](http://git-scm.com/) is installed as some bower
@@ -28,12 +36,12 @@ packages require it to be fetched and installed.
 
 ## Usage
 
-Much more information is available via `bower help` once it's installed. This
+Much more information is available via `bower-auth help` once it's installed. This
 is just enough to get you started.
 
 #### Warning
 
-On `prezto` or `oh-my-zsh`, do not forget to `alias bower='noglob bower'` or `bower install jquery\#1.9.1`
+On `prezto` or `oh-my-zsh`, do not forget to `alias bower-auth='noglob bower-auth'` or `bower-auth install jquery\#1.9.1`
 
 #### Running commands with sudo
 
@@ -46,13 +54,13 @@ Bower offers several ways to install packages:
 
 ```
 # Using the dependencies listed in the current directory's bower.json
-bower install
+bower-auth install
 # Using a local or remote package
-bower install <package>
+bower-auth install <package>
 # Using a specific version of a package
-bower install <package>#<version>
+bower-auth install <package>#<version>
 # Using a different name and a specific version of a package
-bower install <name>=<package>#<version>
+bower-auth install <name>=<package>#<version>
 ```
 
 Where `<package>` can be any one of the following:
@@ -72,7 +80,7 @@ package to that version. You can also use ranges to specify a range of versions.
 All package contents are installed in the `bower_components` directory by default.
 You should **never** directly modify the contents of this directory.
 
-Using `bower list` will show all the packages that are installed locally.
+Using `bower-auth list` will show all the packages that are installed locally.
 
 **N.B.** If you aren't authoring a package that is intended to be consumed by
 others (e.g., you're building a web app), you should always check installed
@@ -83,10 +91,10 @@ packages into source control.
 To search for packages registered with Bower:
 
 ```
-bower search [<name>]
+bower-auth search [<name>]
 ```
 
-Using just `bower search` will list all packages in the registry.
+Using just `bower-auth search` will list all packages in the registry.
 
 ### Using packages
 
@@ -114,12 +122,12 @@ To register a new package:
 Then use the following command:
 
 ```
-bower register <my-package-name> <git-endpoint>
+bower-auth register <my-package-name> <git-endpoint>
 ```
 
 The Bower registry does not have authentication or user management at this point
 in time. It's on a first come, first served basis. Think of it like a URL
-shortener. Now anyone can run `bower install <my-package-name>`, and get your
+shortener. Now anyone can run `bower-auth install <my-package-name>`, and get your
 library installed.
 
 There is no direct way to unregister a package yet. For now, you can [request a
@@ -130,7 +138,7 @@ package be unregistered](https://github.com/bower/bower/issues/120).
 To uninstall a locally installed package:
 
 ```
-bower uninstall <package-name>
+bower-auth uninstall <package-name>
 ```
 
 
@@ -158,7 +166,7 @@ release.
 You can interactively create a `bower.json` with the following command:
 
 ```
-bower init
+bower-auth init
 ```
 
 The `bower.json` defines several options:
@@ -221,7 +229,7 @@ Bower provides a powerful, programmatic API. All commands can be accessed
 through the `bower.commands` object.
 
 ```js
-var bower = require('bower');
+var bower = require('bower-auth');
 
 bower.commands
 .install(['jquery'], { save: true }, { /* custom config */ })
@@ -273,7 +281,7 @@ This command will output a Bash / ZSH script to put into your `~/.bashrc`,
 `~/.bash_profile`, or `~/.zshrc` file.
 
 ```
-bower completion >> ~/.bash_profile
+bower-auth completion >> ~/.bash_profile
 ```
 
 
@@ -308,7 +316,6 @@ review the [guidelines for contributing](CONTRIBUTING.md).
 * [Bug reports](CONTRIBUTING.md#bugs)
 * [Feature requests](CONTRIBUTING.md#features)
 * [Pull requests](CONTRIBUTING.md#pull-requests)
-
 
 ## Authors
 
@@ -352,6 +359,6 @@ Thanks for assistance and contributions:
 
 ## License
 
-Copyright 2012 Twitter, Inc.
+Copyright 2013 Twitter, Inc.
 
 Licensed under the MIT License
